@@ -3,6 +3,7 @@ A Laravel app for create, manage and share your polls.
 
 ## Install
 1: In your terminal:
+
 $ git clone git@github.com:AlexiaTorres/LaravPolls.git
 
 $ cd LaravPolls
