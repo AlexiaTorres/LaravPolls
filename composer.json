@@ -9,6 +9,7 @@
         "backpack/base": "^0.7.16",
         "backpack/crud": "^3.2",
         "laravel/framework": "5.4.*",
+        "laravel/socialite": "^3.0",
         "laravel/tinker": "~1.0"
     },
     "require-dev": {
