@@ -35,3 +35,17 @@ Route::group(['namespace' => 'Auth', 'as' => 'auth.'], function () {
         Route::get('login/{provider}', 'UserController@login')->name('social.login');
     });
 });
+
+Route::group(['prefix' => 'admin', 'middleware' => 'admin', 'namespace' => 'Admin'], function () {
+    CRUD::resource('poll', 'PollCrudController');
+
+    Route::group(['prefix' => 'poll/{poll_id}'], function()
+    {
+        CRUD::resource('question', 'QuestionCrudController');
+    });
+
+    Route::group(['prefix' => 'poll/{poll_id}/question/{question_id}'], function()
+    {
+        CRUD::resource('option', 'OptionCrudController');
+    });
+});
