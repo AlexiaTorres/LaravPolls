@@ -15,6 +15,7 @@ Route::get('/', function () {
     return view('welcome');
 })->name('welcome');
 
+Route::get('polls', 'PollController@showAllPolls')->name('polls');
 
 Route::group(['namespace' => 'Auth', 'as' => 'auth.'], function () {
 
@@ -48,4 +49,6 @@ Route::group(['prefix' => 'admin', 'middleware' => 'admin', 'namespace' => 'Admi
     {
         CRUD::resource('option', 'OptionCrudController');
     });
+
+    Route::get('my-polls/{id}', 'PollController@showMyPolls')->name('my-polls');
 });

@@ -44,4 +44,9 @@ class User extends \Eloquent implements Authenticatable
         // Return the user object
         return $user;
     }
+
+    public function polls()
+    {
+        return $this->hasMany(Poll::class);
+    }
 }
