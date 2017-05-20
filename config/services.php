@@ -36,15 +36,15 @@ return [
     ],
 
     'github' => [
-        'client_id' => '328e3cba03385824dd4a',
-        'client_secret' => 'd555314077297de4b713744abc684e8ab2d3cfbd',
-        'redirect' => 'http://192.168.1.57:8000/login/github',
+        'client_id' => env('GITHUB_CLIENT_ID'),
+        'client_secret' => env('GITHUB_CLIENT_SECRET'),
+        'redirect' => env('GITHUB_REDIRECT'),
     ],
 //        'redirect' => 'https://laravpolls.gotrecillo.com/login/github',
     'twitter' => [
-        'client_id' => 'iS56FYIUYXYzhViuOth6wiHC4',
-        'client_secret' => '46u3c70E0O0qyMhckqQhMdpLB0yB6LCrZaR8fHOc4olky2n3uh',
-        'redirect' => 'https://laravpolls.gotrecillo.com/login/twitter',
+        'client_id' => env('TWITTER_CLIENT_ID'),
+        'client_secret' => env('TWITTER_CLIENT_SECRET'),
+        'redirect' => env('TWITTER_REDIRECT'),
     ],
 
 ];

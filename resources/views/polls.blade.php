@@ -6,7 +6,7 @@
             @foreach($polls as $poll)
                 <article class="portfolio-item pf-illustrations">
                     <div class="portfolio-image">
-                        <a href="">
+                        <a href="{{ route('poll', ['id' => $poll->id]) }}">
                             <img src="/img/poll_image.png"
                                  alt="{{$poll->title}}">
                             <div class="mid">
@@ -16,7 +16,7 @@
                         <div class="portfolio-overlay">
                             <div class="portfolio-desc">
                                 <h3>
-                                    <a href="">
+                                    <a href="{{ route('poll', ['id' => $poll->id]) }}">
                                         {{$poll->title}}
                                     </a>
                                 </h3>

@@ -100,7 +100,7 @@ class QuestionCrudController extends CrudController
 
         // ------ ADVANCED QUERIES
         // $this->crud->addClause('active');
-        // $this->crud->addClause('type', 'car');
+        $this->crud->addClause('where', 'poll_id', '=', $poll_id);
         // $this->crud->addClause('where', 'name', '==', 'car');
         // $this->crud->addClause('whereName', 'car');
         // $this->crud->addClause('whereHas', 'posts', function($query) {

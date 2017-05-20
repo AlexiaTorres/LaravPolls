@@ -423,3 +423,7 @@ div.container > div.countries > div.country > a {
     color: #000;
     font-weight: bold;
 }
+
+.portfolio-overlay{
+    background: #000;
+}

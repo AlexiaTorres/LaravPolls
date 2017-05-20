@@ -15,7 +15,13 @@ Route::get('/', function () {
     return view('welcome');
 })->name('welcome');
 
+
+//Route::bind('poll', function($id) {
+  //  return App\Models\Poll::with('questions.options')->findOrFail($id);
+//});
+
 Route::get('polls', 'PollController@showAllPolls')->name('polls');
+Route::get('poll/{poll}', 'PollController@showPoll')->name('poll');
 
 Route::group(['namespace' => 'Auth', 'as' => 'auth.'], function () {
 

@@ -38,7 +38,7 @@ class Question extends Model
     {
         return $this->belongsTo(Poll::class);
     }
-    public function option()
+    public function options()
     {
         return $this->hasMany(Option::class);
     }

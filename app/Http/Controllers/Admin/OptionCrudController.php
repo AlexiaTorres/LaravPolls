@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Models\Option;
 use Backpack\CRUD\app\Http\Controllers\CrudController;
 
 // VALIDATION: change the requests to match your own file names if you need form validation
@@ -25,7 +26,7 @@ class OptionCrudController extends CrudController
         $poll_id = \Route::current()->parameter('poll_id');
         $question_id = \Route::current()->parameter('question_id');
 
-        $this->crud->setModel('App\Models\Option');
+        $this->crud->setModel(Option::class);
         $this->crud->setRoute(config('backpack.base.route_prefix') . '/poll/'. $poll_id . '/question/'. $question_id . '/option');
         $this->crud->setEntityNameStrings('option', 'options');
 
@@ -69,7 +70,7 @@ class OptionCrudController extends CrudController
         // $this->crud->removeButtonFromStack($name, $stack);
 
         // ------ CRUD ACCESS
-        // $this->crud->allowAccess(['list', 'create', 'update', 'reorder', 'delete']);
+        $this->crud->allowAccess(['list', 'create', 'update', 'reorder', 'delete']);
         // $this->crud->denyAccess(['list', 'create', 'update', 'reorder', 'delete']);
 
         // ------ CRUD REORDER
@@ -131,5 +132,10 @@ class OptionCrudController extends CrudController
         // your additional operations after save here
         // use $this->data['entry'] or $this->crud->entry
         return $redirect_location;
+    }
+
+    public function destroy($id)
+    {
+        parent::destroy($this->request->option);
     }
 }
