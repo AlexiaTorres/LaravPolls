@@ -41,6 +41,8 @@ $ composer install
 $ php artisan migrate
 
 --Set some initial data and run!
+$ php artisan serve
+
 
 ## Usage
 Go to http://localhost:8000/ and let's create your polls!
