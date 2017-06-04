@@ -288,6 +288,24 @@ div.container > div.countries > div.country > a {
     transform: translate(-50%, -50%);
 }
 
+.mid h4 {
+    color: #000;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.mid span {
+    color: #169196;
+    background: #fff;
+    margin: 0;
+    position: absolute;
+    bottom: 0;
+    transform: translate(-50%, -50%);
+    width: 100%;
+}
+
 .divider-center {
     color: #169196 !important;
 }
@@ -350,12 +368,7 @@ label.radio-style-2-label{
 }
 
 h3.poll-title {
-    color: black;
-    -webkit-text-fill-color: white; /* Will override color (regardless of order) */
-    -webkit-text-stroke-width: 1px;
-    -webkit-text-stroke-color: black;
-    background: #169196;
-    width: 50%;
+    color: #169196;
 }
 
 .img-poll{
@@ -368,4 +381,9 @@ h3.poll-title {
 
 .caption-background{
     background: rgba(255, 255, 255, 0.22);
+}
+
+.chart-wrapper{
+    max-width: 900px;
+    margin-bottom: 2em;
 }

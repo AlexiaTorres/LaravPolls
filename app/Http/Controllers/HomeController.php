@@ -8,8 +8,12 @@ class HomeController extends Controller
 {
     public function index()
     {
-        $polls = Poll::all()->take(6);
+        $recentPolls = Poll::recents(6);
 
-        return view('welcome')->with('polls', $polls);
+        $endedPolls = Poll::ended(6);
+
+        $myPolls = \Auth::user() ? Poll::ownedBy(\Auth::user()->id, 6) : [];
+
+        return view('welcome', compact('recentPolls', 'endedPolls', 'myPolls'));
     }
 }

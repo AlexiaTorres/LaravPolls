@@ -8,7 +8,7 @@ class ResultController extends Controller
 {
     public function show(Poll $poll)
     {
-        return view('results')->with('poll', $poll);
+        return view('results', compact('poll'));
     }
 
 }

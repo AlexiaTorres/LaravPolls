@@ -28,6 +28,21 @@ class Question extends Model
     | FUNCTIONS
     |--------------------------------------------------------------------------
     */
+    public function chart()
+    {
+        $chart = \Charts::multi('bar', 'material')
+            ->title(false)
+            ->dimensions(0, 200) // Width x Height
+            ->template("material");
+
+        foreach ($this->options as $option){
+            $chart->dataset($option->option, [$option->users->count()]);
+        }
+
+        $chart->labels([$this->question]);
+
+        return $chart;
+    }
 
     /*
     |--------------------------------------------------------------------------

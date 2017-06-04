@@ -10,18 +10,17 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Route::bind('polls', function($id) {
-    return App\Models\Poll::with('questions.options')->findOrFail($id);
+Route::bind('poll', function($id) {
+    return App\Models\Poll::with('questions.options.users')->findOrFail($id);
 });
 
 Route::get('/', 'HomeController@index')->name('welcome');
 Route::get('polls', 'PollController@index')->name('polls');
 Route::get('poll/{poll}', 'PollController@show')->name('poll')
-    ->middleware(['not-answered']);
+    ->middleware(['not-answered', 'deadline-expired']);
 
 Route::post('poll/{poll}', 'PollController@store')->name('store-poll')
-    ->middleware(['auth', 'not-answered']);
+    ->middleware(['auth', 'not-answered', 'deadline-expired']);
 
 Route::get('result/{poll}', 'ResultController@show')->name('result')->middleware(['auth']);
 

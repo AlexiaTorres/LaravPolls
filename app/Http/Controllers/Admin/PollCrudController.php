@@ -9,6 +9,7 @@ use App\Http\Requests\PollRequest as StoreRequest;
 use App\Http\Requests\PollRequest as UpdateRequest;
 
 use App\Models\User;
+use Carbon\Carbon;
 
 class PollCrudController extends CrudController
 {
@@ -31,39 +32,51 @@ class PollCrudController extends CrudController
         |--------------------------------------------------------------------------
         */
 
-       $this->crud->setFromDb();
-
         // ------ CRUD FIELDS
         // $this->crud->addField($options, 'update/create/both');
         // $this->crud->addFields($array_of_arrays, 'update/create/both');
         // $this->crud->removeField('name', 'update/create/both');
         // $this->crud->removeFields($array_of_names, 'update/create/both');
-        $this->crud->removeField([
-            'name' => 'user_id',
-        ]);
-        $this->crud->removeField([
-            'name' => 'active',
-        ]);
-        $this->crud->addField([
-            'label'     => 'Active',
-            'type'      => 'radio',
-            'name'      => 'active',
-            'options'   => [
-                0   => "Yes",
-                1   => "No"
+        $this->crud->addFields([
+            [
+                'name' => 'title',
             ],
-            'inline'    => true
+            [
+                'name' => 'deadline',
+                'label' => 'Deadline',
+                'type' => 'datetime_picker',
+                'default' => Carbon::now()->toDateTimeString(),
+
+            ],
+            [
+                'label'     => 'Active',
+                'type'      => 'radio',
+                'name'      => 'active',
+                'options'   => [
+                    1   => 'Yes',
+                    0   => 'No',
+                ],
+                'inline'    => true
+            ],
         ]);
+
         // ------ CRUD COLUMNS
         // $this->crud->addColumn(); // add a single column, at the end of the stack
         // $this->crud->addColumns(); // add multiple columns, at the end of the stack
-        $this->crud->removeColumn('active');
-        $this->crud->removeColumn('user_id');
 
-        $this->crud->addColumn([
-            'label' => "Active",
-            'type'  => 'boolean',
-            'name'  => 'active',
+        $this->crud->addColumns([
+            [
+                'name' => 'title',
+            ],
+            [
+                'label' => 'Active',
+                'type'  => 'boolean',
+                'name'  => 'active',
+            ],
+            [
+                'name' => 'deadline',
+                'type' => 'datetime'
+            ],
         ]);
         // $this->crud->removeColumns(['column_name_1', 'column_name_2']); // remove an array of columns from the stack
         // $this->crud->setColumnDetails('column_name', ['attribute' => 'value']); // adjusts the properties of the passed in column (by name)
@@ -122,6 +135,11 @@ class PollCrudController extends CrudController
         // $this->crud->orderBy();
         // $this->crud->groupBy();
         // $this->crud->limit();
+    }
+
+    public function edit($poll)
+    {
+        return parent::edit($poll->id);
     }
 
     public function destroy($poll)

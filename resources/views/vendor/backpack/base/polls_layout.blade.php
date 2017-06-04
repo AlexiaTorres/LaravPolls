@@ -26,6 +26,7 @@
     <!-- Radio Checkbox Plugin -->
     <link rel="stylesheet" href="/vendor/canvas/css/components/radio-checkbox.css" type="text/css" />
     <link rel="stylesheet" href="/vendor/sweetalert/sweetalert.css" />
+    {!! Charts::assets() !!}
     <title>
         {{ isset($title) ? $title : config('backpack.base.project_name') }}
     </title>

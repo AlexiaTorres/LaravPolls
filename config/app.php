@@ -172,6 +172,9 @@ return [
         Backpack\CRUD\CrudServiceProvider::class,
         Backpack\Generators\GeneratorsServiceProvider::class,
         UxWeb\SweetAlert\SweetAlertServiceProvider::class,
+        ConsoleTVs\Charts\ChartsServiceProvider::class,
+        Barryvdh\Debugbar\ServiceProvider::class,
+
 
         /*
          * Application Service Providers...
@@ -231,6 +234,8 @@ return [
         'View'         => Illuminate\Support\Facades\View::class,
         'Socialite'    => Laravel\Socialite\Facades\Socialite::class,
         'Alert'        => UxWeb\SweetAlert\SweetAlert::class,
+        'Charts'       => ConsoleTVs\Charts\Facades\Charts::class,
+        'Debugbar'     => Barryvdh\Debugbar\Facade::class,
     ],
 
 ];
