@@ -14,7 +14,7 @@ class User extends \Eloquent implements Authenticatable
      *
      * @var array
      */
-    protected $fillable = ['id', 'email', 'token', 'avatar'];
+    protected $fillable = ['id', 'email', 'token', 'nickname', 'avatar'];
 
     public function findByEmail($email)
     {
@@ -38,6 +38,8 @@ class User extends \Eloquent implements Authenticatable
             $user = $this->create([
                 'name'  => $data->name,
                 'email' => $user_email,
+                'nickname' => $data->nickname,
+                'avatar' => $data->avatar
             ], true);
         }
 
@@ -48,5 +50,24 @@ class User extends \Eloquent implements Authenticatable
     public function polls()
     {
         return $this->hasMany(Poll::class);
+    }
+
+    public function options()
+    {
+        return $this->belongsToMany(Option::class)->withTimestamps();
+    }
+
+    public function getAvatarOrDefaultAttribute()
+    {
+        return $this->avatar
+            ? $this->avatar
+            : "/img/kola-profile.png";
+    }
+
+    public function getNicknameOrEmailAttribute()
+    {
+        return $this->nickname
+            ? $this->nickname
+            : $this->email;
     }
 }

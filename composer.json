@@ -11,7 +11,8 @@
         "laravel/framework": "5.4.*",
         "laravel/socialite": "^3.0",
         "laravel/tinker": "~1.0",
-        "spatie/laravel-migrate-fresh": "^1.4"
+        "spatie/laravel-migrate-fresh": "^1.4",
+        "uxweb/sweet-alert": "^1.4"
     },
     "require-dev": {
         "backpack/generators": "^1.1",

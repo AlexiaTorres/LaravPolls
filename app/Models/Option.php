@@ -27,10 +27,7 @@ class Option extends Model
     | FUNCTIONS
     |--------------------------------------------------------------------------
     */
-    public function questionTitle()
-    {
-        return 'foo';
-    }
+
 
     /*
     |--------------------------------------------------------------------------
@@ -40,6 +37,11 @@ class Option extends Model
     public function question()
     {
         return $this->belongsTo(Question::class);
+    }
+
+    public function users()
+    {
+        return $this->belongsToMany(User::class)->withTimestamps();
     }
     /*
     |--------------------------------------------------------------------------

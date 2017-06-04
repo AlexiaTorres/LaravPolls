@@ -168,6 +168,10 @@ return [
          */
         Laravel\Tinker\TinkerServiceProvider::class,
         Laravel\Socialite\SocialiteServiceProvider::class,
+        Backpack\Base\BaseServiceProvider::class,
+        Backpack\CRUD\CrudServiceProvider::class,
+        Backpack\Generators\GeneratorsServiceProvider::class,
+        UxWeb\SweetAlert\SweetAlertServiceProvider::class,
 
         /*
          * Application Service Providers...
@@ -177,10 +181,6 @@ return [
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
-
-        \Backpack\Base\BaseServiceProvider::class,
-        \Backpack\CRUD\CrudServiceProvider::class,
-        \Backpack\Generators\GeneratorsServiceProvider::class,
     ],
 
     /*
@@ -229,8 +229,8 @@ return [
         'URL'          => Illuminate\Support\Facades\URL::class,
         'Validator'    => Illuminate\Support\Facades\Validator::class,
         'View'         => Illuminate\Support\Facades\View::class,
-        'Socialite' => Laravel\Socialite\Facades\Socialite::class,
-
+        'Socialite'    => Laravel\Socialite\Facades\Socialite::class,
+        'Alert'        => UxWeb\SweetAlert\SweetAlert::class,
     ],
 
 ];

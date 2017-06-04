@@ -77,6 +77,7 @@ class PollCrudController extends CrudController
         // $this->crud->removeButton($name);
         // $this->crud->removeButtonFromStack($name, $stack);
         $this->crud->addButtonFromView('line', 'questions', 'questions', 'beginning');
+        $this->crud->addClause('where', 'user_id', '=', \Auth::user()->id);
 
         // ------ CRUD ACCESS
         // $this->crud->allowAccess(['list', 'create', 'update', 'reorder', 'delete']);

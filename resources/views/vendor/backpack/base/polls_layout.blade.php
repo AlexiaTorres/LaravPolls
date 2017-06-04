@@ -25,7 +25,7 @@
     <link rel="stylesheet" href="/vendor/canvas/css/font-awesome/css/font-awesome.min.css">
     <!-- Radio Checkbox Plugin -->
     <link rel="stylesheet" href="/vendor/canvas/css/components/radio-checkbox.css" type="text/css" />
-
+    <link rel="stylesheet" href="/vendor/sweetalert/sweetalert.css" />
     <title>
         {{ isset($title) ? $title : config('backpack.base.project_name') }}
     </title>
@@ -57,5 +57,7 @@
 <!-- Footer Scripts
 ============================================= -->
 <script type="text/javascript" src="/vendor/canvas/js/functions.js"></script>
+<script type="text/javascript" src="/vendor/sweetalert/sweetalert.min.js"></script>
+@include('sweet::alert')
 </body>
 </html>

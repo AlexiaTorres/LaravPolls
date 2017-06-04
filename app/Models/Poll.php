@@ -43,6 +43,11 @@ class Poll extends Model
     {
         return $this->hasMany(Question::class);
     }
+
+    public function options()
+    {
+        return $this->hasManyThrough(Option::class, Question::class);
+    }
     /*
     |--------------------------------------------------------------------------
     | SCOPES
