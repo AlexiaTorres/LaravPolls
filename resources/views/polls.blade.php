@@ -33,8 +33,10 @@
                         </div>
                     </div>
                 </article>
-
             @endforeach
         </div>
+    </div>
+    <div class="center">
+        {{$polls->links()}}
     </div>
 @endsection

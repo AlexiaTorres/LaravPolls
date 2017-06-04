@@ -44,14 +44,7 @@ class OptionCrudController extends CrudController
         // $this->crud->removeField('name', 'update/create/both');
         // $this->crud->removeFields($array_of_names, 'update/create/both');
         $this->crud->removeColumn('question_id');
-        $this->crud->addColumn([
-            'label'     => 'Question',
-            'type'      => 'select',
-            'name'      => 'question_id',
-            'entity'    => 'question',
-            'attribute' => 'question',
-            'model'     => Question::class,
-        ]);
+
         $this->crud->removeField('question_id');
         // ------ CRUD COLUMNS
         // $this->crud->addColumn(); // add a single column, at the end of the stack

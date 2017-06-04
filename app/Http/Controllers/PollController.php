@@ -8,22 +8,15 @@ use App\Models\Poll;
 class PollController extends Controller
 {
 
-    public function showAllPolls()
+    public function index()
     {
-        $polls = Poll::all();
+        $polls = Poll::paginate(6);
         return view('polls')->with('polls', $polls);
     }
 
-   public function showPoll(Poll $poll)
+   public function show(Poll $poll)
     {
         return view('poll')->with('poll', $poll);
-    }
-
-    public function showRecent()
-    {
-        $polls = Poll::all()->take(3);
-
-        return view('welcome')->with('polls', $polls);
     }
 
 }
