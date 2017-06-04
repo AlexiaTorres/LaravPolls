@@ -1,8 +1,8 @@
 @extends('vendor.backpack.base.polls_layout')
 
 @section('content')
-    <div class="container center">
-        <h3 class="poll-title"><span>{{$poll->title}}</span></h3>
+    <div class="container">
+        <h3 class="poll-title center">{{$poll->title}}</h3>
         @foreach($poll->questions as $question)
             <span class="question-span">{{$question->question}}</span>
             @foreach($question->options as $option)
@@ -12,6 +12,5 @@
                 </div>
             @endforeach
         @endforeach
-        <img src="/img/koala.jpg" class="img-poll">
     </div>
 @endsection

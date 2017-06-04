@@ -355,6 +355,7 @@ h3.poll-title {
     -webkit-text-stroke-width: 1px;
     -webkit-text-stroke-color: black;
     background: #169196;
+    width: 50%;
 }
 
 .img-poll{
