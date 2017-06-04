@@ -1,16 +1,17 @@
 @extends('vendor.backpack.base.polls_layout')
 
 @section('content')
-    <div class="container">
-        <li id="portfolio" class="portfolio grid-container portfolio-3 clearfix">
-            @foreach($poll->questions as $question)
-                <ul>
-                    <li>
-                            {{$question->question}}
-                    </li>
-                </ul>
-
+    <div class="container center">
+        <h3 class="poll-title"><span>{{$poll->title}}</span></h3>
+        @foreach($poll->questions as $question)
+            <span class="question-span">{{$question->question}}</span>
+            @foreach($question->options as $option)
+                <div class="options">
+                    <input id="{{$option->option}}" class="radio-style" name="{{$option->option}}" type="radio">
+                    <label for="{{$option->option}}" class="radio-style-2-label">{{$option->option}}</label>
+                </div>
             @endforeach
-        </div>
+        @endforeach
+        <img src="/img/koala.jpg" class="img-poll">
     </div>
 @endsection

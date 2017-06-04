@@ -123,6 +123,11 @@ class PollCrudController extends CrudController
         // $this->crud->limit();
     }
 
+    public function destroy($poll)
+    {
+        return parent::destroy($poll->id);
+    }
+
     public function store(StoreRequest $request)
     {
         $request->request->add(['user_id' => auth()->user()->id]);

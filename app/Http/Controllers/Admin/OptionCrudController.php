@@ -100,6 +100,7 @@ class OptionCrudController extends CrudController
 
         // ------ ADVANCED QUERIES
         // $this->crud->addClause('active');
+        $this->crud->addClause('where', 'question_id', '=', $question_id);
         // $this->crud->addClause('type', 'car');
         // $this->crud->addClause('where', 'name', '==', 'car');
         // $this->crud->addClause('whereName', 'car');
@@ -112,30 +113,32 @@ class OptionCrudController extends CrudController
         // $this->crud->orderBy();
         // $this->crud->groupBy();
         // $this->crud->limit();
+        $this->crud->addButtonFromView('top', 'back_to_question', 'back_to_question', 'end');
+    }
+
+    public function edit($id)
+    {
+        $option_id = \Route::current()->parameter('option');
+        return parent::edit($option_id);
+    }
+
+    public function destroy($id)
+    {
+        $option_id = \Route::current()->parameter('option');
+        return parent::destroy($option_id);
     }
 
     public function store(StoreRequest $request)
     {
         $question_id = \Route::current()->parameter('question_id');
         $request->request->add(['question_id' => $question_id]);
-        // your additional operations before save here
         $redirect_location = parent::storeCrud($request);
-        // your additional operations after save here
-        // use $this->data['entry'] or $this->crud->entry
         return $redirect_location;
     }
 
     public function update(UpdateRequest $request)
     {
-        // your additional operations before save here
         $redirect_location = parent::updateCrud();
-        // your additional operations after save here
-        // use $this->data['entry'] or $this->crud->entry
         return $redirect_location;
-    }
-
-    public function destroy($id)
-    {
-        parent::destroy($this->request->option);
     }
 }

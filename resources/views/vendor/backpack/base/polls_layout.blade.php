@@ -23,6 +23,8 @@
     <link rel="stylesheet" type="text/css" href="/vendor/canvas/css/normalize.css"/>
     <link rel="stylesheet" href="/vendor/canvas/css/responsive.css" type="text/css"/>
     <link rel="stylesheet" href="/vendor/canvas/css/font-awesome/css/font-awesome.min.css">
+    <!-- Radio Checkbox Plugin -->
+    <link rel="stylesheet" href="/vendor/canvas/css/components/radio-checkbox.css" type="text/css" />
 
     <title>
         {{ isset($title) ? $title : config('backpack.base.project_name') }}
@@ -34,12 +36,12 @@
     <header id="header">
         @include('backpack::inc.header')
     </header>
-@yield('content')
-
-<footer id="footer" class="dark">
-    @include('backpack::inc.footer')
-</footer><!-- #footer end -->
+    @yield('content')
 </div>
+
+    <footer id="footer" class="dark">
+        @include('backpack::inc.footer')
+    </footer><!-- #footer end -->
 
 <!-- ./wrapper -->
 

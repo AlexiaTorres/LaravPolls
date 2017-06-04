@@ -16,6 +16,9 @@ class CreateQuestionsTable extends Migration
         Schema::create('questions', function (Blueprint $table) {
             $table->increments('id');
             $table->string('question');
+            $table->string('description')->nullable();
+            $table->enum('type', ['SINGLE', 'MULTIPLE', 'TEXT', 'TEXT_AREA'])
+                ->default('SINGLE');
             $table->integer('poll_id')->unsigned();
             $table->timestamps();
 

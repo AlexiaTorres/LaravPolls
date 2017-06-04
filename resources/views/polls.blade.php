@@ -1,8 +1,10 @@
 @extends('vendor.backpack.base.polls_layout')
 
 @section('content')
-    <div class="container">
-        <div id="portfolio" class="portfolio grid-container portfolio-3 clearfix">
+    <div id="portfolio" class="portfolio grid-container portfolio-3 clearfix">
+        <div class="container center">
+            <h3 class="center section-title">All Polls</h3>
+            <div class="divider divider-center"><i class="fa fa-bar-chart"></i></div>
             @foreach($polls as $poll)
                 <article class="portfolio-item pf-illustrations">
                     <div class="portfolio-image">
@@ -25,7 +27,6 @@
                                     Deadline:
                                     <br/>
                                     {{$poll->deadline}}
-                                    <i class="fa fa-bar-chart"></i>
                                 </span>
                             </span>
                             </div>

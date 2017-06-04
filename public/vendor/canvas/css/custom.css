@@ -225,20 +225,15 @@ div.container > div.countries > div.country > a {
     background: #000 !important;
     border: none !important;
     color: #fff !important;
-
 }
 
 #footer.dark, .dark #footer {
     background-color: #000 !important;
     color: #fff !important;
     border-top: none !important;
-    /*position: fixed;
-    bottom: 0px;
-    right: 0;
-    width: 100%;*/
+    margin-top: 1.5em;
 }
 
-/*PAISES*/
 .img-fixed-right {
     position: fixed;
     right: 0.2em;
@@ -339,91 +334,37 @@ div.container > div.countries > div.country > a {
     height: 201px !important;
 }*/
 
-/*Cookies*/
-
-#cookie-bar {
-    position: fixed;
-    width: 100%;
-    bottom: 0;
-    right: 0;
-    left: 0;
-    height: 14%;
-    text-align: center;
-    line-height: 30px;
-    background: linear-gradient(#169196, #169196);
-    color: white;
-    font-size: 14px;
-    font-family: "Lato", sans-serif;
-    font-weight: 100;
-    transition: .8s;
-    animation: slideIn .8s;
-    animation-delay: .8s;
-}
-
-#cookie-bar > .message {
-    white-space: nowrap;
-}
-
-@media (max-width: 767px) {
-    #cookie-bar > .message {
-        display: none;
-    }
-}
-
-#cookie-bar > .mobile {
-    display: none;
-}
-
-@media (max-width: 767px) {
-    #cookie-bar > .mobile {
-        display: inline-block;
-    }
-}
-
-@keyframes slideIn {
-    0% {
-        transform: translateY(-50px);
-    }
-    100% {
-        transform: translateY(0);
-    }
-}
-
-#cookie-bar .close-cb {
-    border: none;
-    color: white;
-    background: #169196;
-    position: absolute;
-    right: 10px;
-    top: 0;
-    cursor: pointer;
-    border-radius: 3px;
-    box-shadow: inset 0 0 3px 0 rgba(0, 0, 0, 0.2);
-    line-height: 30px;
-    height: 30px;
-    width: 30px;
-    font-size: 16px;
-    font-weight: bold;
-}
-
-#cookie-bar .close-cb:hover {
-    background: #169196;
-}
-
-#cookie-bar .checkbox-cb {
-    display: none;
-}
-
-#cookie-bar .checkbox-cb:checked + .cookie-bar {
-    -webkit-transform: translateY(-50px);
-    transform: translateY(-50px);
-}
-
-#cookie-bar a {
-    color: #000;
-    font-weight: bold;
-}
-
-.portfolio-overlay{
+.portfolio-overlay {
     background: #000;
+}
+
+.radio-style:checked + .radio-style-2-label:before {
+    background: #169196 !important;
+}
+span.question-span {
+    font-size: 18px;
+    color: #169196;
+}
+label.radio-style-2-label{
+    text-transform: none;
+}
+
+h3.poll-title {
+    color: black;
+    -webkit-text-fill-color: white; /* Will override color (regardless of order) */
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: black;
+    background: #169196;
+}
+
+.img-poll{
+    margin-bottom: 1em;
+}
+
+.section-title {
+    color: #169196;
+}
+
+.caption-background{
+    background: rgba(255, 255, 255, 0.22);
 }

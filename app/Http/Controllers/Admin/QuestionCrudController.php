@@ -25,7 +25,7 @@ class QuestionCrudController extends CrudController
         $poll_id = \Route::current()->parameter('poll_id');
 
         $this->crud->setModel('App\Models\Question');
-        $this->crud->setRoute(config('backpack.base.route_prefix') . '/poll/'. $poll_id . '/question');
+        $this->crud->setRoute(config('backpack.base.route_prefix') . '/poll/' . $poll_id . '/question');
         $this->crud->setEntityNameStrings('question', 'questions');
 
         /*
@@ -34,23 +34,30 @@ class QuestionCrudController extends CrudController
         |--------------------------------------------------------------------------
         */
 
-        $this->crud->setFromDb();
-
         // ------ CRUD FIELDS
         // $this->crud->addField($options, 'update/create/both');
         // $this->crud->addFields($array_of_arrays, 'update/create/both');
         // $this->crud->removeField('name', 'update/create/both');
         // $this->crud->removeFields($array_of_names, 'update/create/both');
-        $this->crud->removeColumn('poll_id');
-        $this->crud->addColumn([
-            'label'     => 'Poll',
-            'type'      => 'select',
-            'name'      => 'poll_id',
-            'entity'    => 'poll',
-            'attribute' => 'title',
-            'model'     => Poll::class,
+        $this->crud->addColumns([
+                [
+                    'label' => 'Question',
+                    'name'  => 'question',
+                ],
+            ]
+        );
+
+        $this->crud->addFields([
+            [
+                'label' => 'Question',
+                'name' => 'question',
+            ],
+            [
+                'label' => 'Description',
+                'name' => 'description',
+                'type' => 'textarea'
+            ]
         ]);
-        $this->crud->removeField('poll_id');
 
         // ------ CRUD COLUMNS
         // $this->crud->addColumn(); // add a single column, at the end of the stack
@@ -112,26 +119,33 @@ class QuestionCrudController extends CrudController
         // $this->crud->orderBy();
         // $this->crud->groupBy();
         // $this->crud->limit();
+        $this->crud->addButtonFromView('top', 'back_to_poll', 'back_to_poll', 'end');
+
+    }
+
+    public function edit($id)
+    {
+        $question_id = \Route::current()->parameter('question');
+        return parent::edit($question_id);
+    }
+
+    public function destroy($id)
+    {
+        $question_id = \Route::current()->parameter('question');
+        return parent::destroy($question_id);
     }
 
     public function store(StoreRequest $request)
     {
         $poll_id = \Route::current()->parameter('poll_id');
         $request->request->add(['poll_id' => $poll_id]);
-        // your additional operations before save here
         $redirect_location = parent::storeCrud($request);
-        // your additional operations after save here
-        // use $this->data['entry'] or $this->crud->entry
         return $redirect_location;
     }
 
     public function update(UpdateRequest $request)
     {
-        // your additional operations before save here
         $redirect_location = parent::updateCrud();
-        // your additional operations after save here
-        // use $this->data['entry'] or $this->crud->entry
         return $redirect_location;
     }
-
 }

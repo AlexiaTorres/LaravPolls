@@ -16,13 +16,6 @@
                     ============================================= -->
             <nav id="primary-menu">
                 <ul>
-                    @if (Auth::check())
-                        <li>
-                            <a href="{{ route('my-polls', ['id' => Auth::user()->id]) }}">
-                                <div>My Polls</div>
-                            </a>
-                        </li>
-                    @endif
                     <li>
                         <a href="{{ route('polls') }}">
                             <div>All Polls</div>
@@ -30,8 +23,8 @@
                     </li>
                     @if (Auth::check())
                         <li>
-                            <a href="{{ url(config('backpack.base.route_prefix', 'admin').'/dashboard') }}">
-                                <div>Manage Polls</div>
+                            <a href="{{ url(config('backpack.base.route_prefix', 'admin').'/poll') }}">
+                                <div>My Polls</div>
                             </a>
                         </li>
                     @endif
@@ -46,7 +39,7 @@
                         <li>
                             <a href="{{ url('/logout') }}">
                                 <div>
-                                    <i class="fa fa-sign-out"></i>
+                                    Log out
                                 </div>
                             </a>
                         </li>
