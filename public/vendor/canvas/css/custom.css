@@ -442,13 +442,13 @@ h3.poll-title {
     right: -18px !important;
 }
 
-.btn-send {
+.btn-send, .btn-view:hover {
     background: #169196;
     color: #fff;
     margin-top: 1.5em;
 }
 
-.btn-view {
+.btn-view, .btn-send:hover {
     background: #fff;
     color: #169196;
     border: 1px solid #169196;
