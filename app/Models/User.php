@@ -52,6 +52,11 @@ class User extends \Eloquent implements Authenticatable
         return $this->hasMany(Poll::class);
     }
 
+    public function lastPolls($number)
+    {
+        return $this->polls()->limit($number)->get();
+    }
+
     public function options()
     {
         return $this->belongsToMany(Option::class)->withTimestamps();

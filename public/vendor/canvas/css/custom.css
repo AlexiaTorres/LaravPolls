@@ -296,6 +296,7 @@ div.container > div.countries > div.country > a {
     left: 50%;
     transform: translate(-50%, -50%);
 }
+
 .mid span {
     color: #169196;
     background: #fff;
@@ -359,11 +360,13 @@ div.container > div.countries > div.country > a {
 .radio-style:checked + .radio-style-2-label:before {
     background: #169196 !important;
 }
+
 span.question-span {
     font-size: 18px;
     color: #169196;
 }
-label.radio-style-2-label{
+
+label.radio-style-2-label {
     text-transform: none;
 }
 
@@ -371,7 +374,7 @@ h3.poll-title {
     color: #169196;
 }
 
-.img-poll{
+.img-poll {
     margin-bottom: 1em;
 }
 
@@ -379,11 +382,23 @@ h3.poll-title {
     color: #169196;
 }
 
-.caption-background{
+.poll-deadline {
+    color: #8f5093;
+}
+
+.caption-background {
     background: rgba(255, 255, 255, 0.22);
 }
 
-.chart-wrapper{
+.chart-wrapper {
     max-width: 900px;
     margin-bottom: 2em;
+}
+
+.poll-portfolio {
+    margin-top: 5%;
+}
+
+.header_img {
+    width: 100% !important;
 }

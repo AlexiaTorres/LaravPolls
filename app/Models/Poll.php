@@ -41,10 +41,6 @@ class Poll extends Model
         return static::expired()->orderBy('deadline', 'desc')->take($number)->get();
     }
 
-    public static function ownedBy($user, $number)
-    {
-        return static::query()->where('user_id', '=', $user)->orderBy('id', 'desc')->take($number)->get();
-    }
     /*
     |--------------------------------------------------------------------------
     | RELATIONS
