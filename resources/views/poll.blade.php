@@ -4,16 +4,7 @@
     <div class="container">
         <h3 class="poll-title">{{$poll->title}}</h3>
 
-        @if(auth()->user())
-            <button type="submit" class="btn btn-send">
-                Send
-                <i class="fa fa-send"></i>
-            </button>
-            <a href="{{route('result', compact('poll'))}}" class="btn btn-view">
-                View Results
-                <i class="fa fa-pie-chart"></i>
-            </a>
-        @else
+        @if(!auth()->user())
             <button class="btn btn-login-for-vote">
                 <a href="{{route('auth.login')}}">
                     Log in to answer the poll
@@ -40,6 +31,16 @@
                 </div>
             @endforeach
         @endforeach
+        @if(auth()->user())
+            <button type="submit" class="btn btn-send">
+                Send
+                <i class="fa fa-send"></i>
+            </button>
+            <a href="{{route('result', compact('poll'))}}" class="btn btn-view">
+                View Results
+                <i class="fa fa-pie-chart"></i>
+            </a>
+        @endif
         {{ Form::close() }}
     </div>
 @endsection
