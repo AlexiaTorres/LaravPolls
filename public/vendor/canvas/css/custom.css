@@ -449,12 +449,18 @@ h3.poll-title {
     margin-top: 1.5em;
 }
 
-.btn-view, .btn-send:hover {
+.btn-view {
     background: #fff;
     color: #169196;
     border: 1px solid #169196;
     margin-top: 1.5em;
     margin-left: 1em;
+}
+
+.btn-send:hover {
+    background: #fff;
+    color: #169196;
+    margin-top: 1.5em;
 }
 
 .btn-login-for-vote {
