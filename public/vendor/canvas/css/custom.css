@@ -364,8 +364,11 @@ div.container > div.countries > div.country > a {
 span.question-span {
     font-size: 18px;
     color: #169196;
-    margin-bottom: 1.5em;
-    margin-top: 1.5em;
+}
+
+div.options{
+    margin-bottom: 1em !important;
+    margin-top: 1em !important;
 }
 
 label.radio-style-2-label {
