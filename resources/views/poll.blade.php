@@ -16,7 +16,7 @@
 
         {{ Form::open() }}
         @foreach($poll->questions as $question)
-            <span class="question-span">{{$question->question}}</span>
+            <div class="question-span">{{$question->question}}</div>
             @foreach($question->options as $option)
                 <div class="options">
                     <input id="{{$option->id}}"

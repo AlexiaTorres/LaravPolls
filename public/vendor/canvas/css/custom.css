@@ -361,7 +361,8 @@ div.container > div.countries > div.country > a {
     background: #169196 !important;
 }
 
-span.question-span {
+div.question-span {
+    margin-top: 50px !important;
     font-size: 18px;
     color: #169196;
 }
