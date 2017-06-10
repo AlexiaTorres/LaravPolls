@@ -458,6 +458,7 @@ h3.poll-title {
 }
 
 .btn-send:hover {
+    border: 1px solid #169196;
     background: #fff;
     color: #169196;
     margin-top: 1.5em;
