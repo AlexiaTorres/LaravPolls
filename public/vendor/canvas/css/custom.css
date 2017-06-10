@@ -402,3 +402,67 @@ h3.poll-title {
 .header_img {
     width: 100% !important;
 }
+
+@media (max-width: 767px) {
+    h4.poll-title {
+        font-size: 11px;
+        margin-bottom: -5px;
+    }
+    span.poll-deadline{
+        font-size: 10px;
+    }
+}
+
+.owl-carousel .owl-nav [class*=owl-] {
+    background-color: #169196 !important;
+    color: #FFF !important;
+    text-decoration: none;
+}
+
+.owl-carousel .owl-nav [class*=owl-]:hover {
+    background-color: #4ee8df !important;
+    color: #b6917c !important;
+    text-decoration: none;
+}
+
+.owl-carousel .owl-nav [class*=owl-] {
+    opacity: 1 !important;
+}
+
+.owl-prev {
+    left: -18px !important;
+}
+
+.owl-next {
+    right: -18px !important;
+}
+
+.btn-send {
+    background: #169196;
+    color: #fff;
+    margin-top: 1.5em;
+}
+
+.btn-view {
+    background: #fff;
+    color: #169196;
+    border: 1px solid #169196;
+    margin-top: 1.5em;
+    margin-left: 1em;
+}
+
+.btn-login-for-vote {
+    background: #169196;
+    margin-bottom: 2em;
+}
+
+.btn-login-for-vote > a {
+    color: #fff;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.btn-login-for-vote > a > i{
+    font-size: 20px;
+    margin-top: 0.5em;
+}

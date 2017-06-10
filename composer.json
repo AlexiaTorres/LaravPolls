@@ -1,6 +1,6 @@
 {
-    "name": "laravel/laravel",
-    "description": "The Laravel Framework.",
+    "name": "LaravPolls",
+    "description": "Laravel app for manage and vote polls",
     "keywords": ["framework", "laravel"],
     "license": "MIT",
     "type": "project",

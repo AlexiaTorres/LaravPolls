@@ -12,25 +12,12 @@
                             <a href="{{ route('poll', ['id' => $poll->id]) }}">
                                 <article class="portfolio-item pf-illustrations">
                                     <div class="portfolio-image">
-                                        <img src="/img/poll_image.png"
+                                        <img src="/img/poll.jpg"
                                              alt="{{$poll->title}}">
-                                        <div class="mid">
-                                            <h2 style="">{{$poll->title}}</h2>
-                                        </div>
-                                        <div class="portfolio-overlay">
-                                            <div class="portfolio-desc">
-                                                <h3>
-                                                    {{$poll->title}}
-                                                </h3>
-                                                <span>
-                                        <span>
-                                            Deadline:
-                                            <br/>
-                                            {{$poll->deadline}}
+                                        <h4 class="poll-title">{{$poll->title}}</h4>
+                                        <span class="poll-deadline">
+                                            {{ $poll->deadlinePrefix }} {{\Carbon\Carbon::parse($poll->deadline)->diffForHumans()}}
                                         </span>
-                                    </span>
-                                            </div>
-                                        </div>
                                     </div>
                                 </article>
                             </a>

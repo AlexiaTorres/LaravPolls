@@ -170,7 +170,6 @@ return [
         Laravel\Socialite\SocialiteServiceProvider::class,
         Backpack\Base\BaseServiceProvider::class,
         Backpack\CRUD\CrudServiceProvider::class,
-        Backpack\Generators\GeneratorsServiceProvider::class,
         UxWeb\SweetAlert\SweetAlertServiceProvider::class,
         ConsoleTVs\Charts\ChartsServiceProvider::class,
         Barryvdh\Debugbar\ServiceProvider::class,

@@ -33,7 +33,9 @@ class Question extends Model
         $chart = \Charts::multi('bar', 'material')
             ->title(false)
             ->dimensions(0, 200) // Width x Height
-            ->template("material");
+            ->template("material")
+            ->colors(['#169196', '#8f5093', '#b69578', '#46ed94', '#ec8caa', '#626262'])
+            ->responsive(true);
 
         foreach ($this->options as $option){
             $chart->dataset($option->option, [$option->users->count()]);

@@ -2,33 +2,44 @@
 
 @section('content')
     <div class="container">
-        <h3 class="poll-title center">{{$poll->title}}</h3>
+        <h3 class="poll-title">{{$poll->title}}</h3>
+
+        @if(auth()->user())
+            <button type="submit" class="btn btn-send">
+                Send
+                <i class="fa fa-send"></i>
+            </button>
+            <a href="{{route('result', compact('poll'))}}" class="btn btn-view">
+                View Results
+                <i class="fa fa-pie-chart"></i>
+            </a>
+        @else
+            <button class="btn btn-login-for-vote">
+                <a href="{{route('auth.login')}}">
+                    Log in to answer the poll
+                    <br/>
+                    <i class="fa fa-exclamation-triangle"></i>
+                </a>
+            </button>
+        @endif
+
         {{ Form::open() }}
         @foreach($poll->questions as $question)
             <span class="question-span">{{$question->question}}</span>
             @foreach($question->options as $option)
                 <div class="options">
-                    <input id="{{$option->option}}"
+                    <input id="{{$option->id}}"
                            class="radio-style"
                            name="question_{{$question->id}}"
                            value="{{$option->id}}"
                            type="radio"
+                           {{ Auth::user() ? '' : 'disabled'}}
                            required
                     />
-                    <label for="{{$option->option}}" class="radio-style-2-label">{{$option->option}}</label>
+                    <label for="{{$option->id}}" class="radio-style-2-label">{{$option->option}}</label>
                 </div>
             @endforeach
         @endforeach
-
-        @if(auth()->user())
-            <button type="submit" class="btn btn-primary">Send</button>
-            <a href="{{route('result', compact('poll'))}}" class="btn btn-primary">View Results</a>
-        @else
-            <span><a href="{{route('auth.login')}}">
-                     Log in to answer the poll
-                </a></span>
-        @endif
-
         {{ Form::close() }}
     </div>
 @endsection
