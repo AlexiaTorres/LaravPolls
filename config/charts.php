@@ -10,16 +10,16 @@ return [
 
     'default' => [
         'type' => 'line', // The default chart type.
-        'library' => 'material', // The default chart library.
-        'element_label' => 'Element', // The default chart element label.
-        'title' => 'My Cool Chart', // Default chart title.
-        'height' => 400, // 0 Means it will take 100% of the division height.
+        'library' => 'highcharts', // The default chart library.
+        'element_label' => 'Number of votes', // The default chart element label.
+        'title' => ' ', // Default chart title.
+        'height' => 200, // 0 Means it will take 100% of the division height.
         'width' => 0, // 0 Means it will take 100% of the division width.
-        'responsive' => false, // Not recommended since all libraries have diferent sizes.
+        'responsive' => true, // Not recommended since all libraries have diferent sizes.
         'background_color' => 'inherit', // The chart division background color.
-        'colors' => [], // Default chart colors if using no template is set.
+        'colors' => ['#169196', '#8f5093', '#b69578', '#46ed94', '#ec8caa', '#626262'], // Default chart colors if using no template is set.
         'one_color' => false, // Only use the first color in all values.
-        'template' => 'material', // The default chart color template.
+        'template' => 'highcharts', // The default chart color template.
         'legend' => true, // Whether to enable the chart legend (where applicable).
         'x_axis_title' => false, // The title of the x-axis
         'y_axis_title' => null, // The title of the y-axis (When set to null will use element_label value).

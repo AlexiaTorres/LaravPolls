@@ -30,6 +30,7 @@
                 },
             },
             xAxis: {
+                tickInterval: 1,
                 title: {
                     text: "{!! $model->x_axis_title !!}"
                 },
@@ -40,6 +41,7 @@
                 ],
             },
             yAxis: {
+                tickInterval: 1,
                 title: {
                     text: "{!! $model->y_axis_title === null ? $model->element_label : $model->y_axis_title !!}"
                 },

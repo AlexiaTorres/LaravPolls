@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Backpack\CRUD\CrudTrait;
+use Illuminate\Support\Arr;
 
 class Question extends Model
 {
@@ -30,12 +31,9 @@ class Question extends Model
     */
     public function chart()
     {
-        $chart = \Charts::multi('bar', 'material')
-            ->title(false)
-            ->dimensions(0, 200) // Width x Height
-            ->template("material")
-            ->colors(['#169196', '#8f5093', '#b69578', '#46ed94', '#ec8caa', '#626262'])
-            ->responsive(true);
+        $colors = Arr::shuffle(config('colors'));
+
+        $chart = \Charts::multi('bar', 'highcharts')->colors($colors);
 
         foreach ($this->options as $option){
             $chart->dataset($option->option, [$option->users->count()]);
