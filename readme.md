@@ -38,6 +38,8 @@ $ composer install
 
 --Copy .env.example into .env and fill it with the data of your database
 
+$ php artisan key:generate
+
 $ php artisan migrate
 
 --Set some initial data and run!
