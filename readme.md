@@ -26,26 +26,27 @@ A Laravel app for create, manage and share your polls.
 ## Install
 1: In your terminal:
 
-$ git clone https://github.com/AlexiaTorres/LaravPolls.git
+```bash
+git clone https://github.com/AlexiaTorres/LaravPolls.git
 
-$ cd LaravPolls
+cd LaravPolls
 
---Install dependencies
+#Install dependencies
 
-$ composer install
+composer install
 
---Create the database
+#Create the database and then:
 
---Copy .env.example into .env and fill it with the data of your database
+cp .env.example .env
 
-$ php artisan key:generate
+#Fill it with the data of your database
 
-$ php artisan migrate
+php artisan key:generate
 
---Set some initial data and run!
-$ php artisan serve
+php artisan migrate
 
-
+php artisan serve
+```
 ## Usage
 Go to http://localhost:8000/ and let's create your polls!
 
